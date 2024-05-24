@@ -1,82 +1,269 @@
-<!DOCTYPE html>
+<!DOCTYPE html>					<!-- links, comments, class names, tab icon, kulang texts sa main -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpinWorx</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Caffeine Cove</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: monospace, sans-serif;
+            background-color: #ebebeb;
             margin: 0;
-            padding: 0;
-			background-image: url('https://snworksceo.imgix.net/asp/5d622b6d-ff9d-4f47-b719-9863f7550776.sized-1000x1000.jpg?w=1000'); 
-            background-size: 150%;
-            background-position: center; 
-			background repeat: no-repeat;
-			color: #ffffff;
         }
+
         header {
-            background-color: #333;
+            background: #474032;
             color: #fff;
-            padding: 20px;
+            padding: 10px 20px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .left-part a:hover {
+            background-color: #73695e;
+        }
+
+        .mid-part {
+            flex: 1; /* Take remaining space */
+            text-align: center; /* Center the logo horizontally */
+            margin-right: 250px;
+        }
+
+        .mid-part a img {
+            width: 180px;
+            height: 40px;
+        }
+
+        .right-part {
+            margin-left: auto; /* Push the .right-part to the right */
+        }
+
+        .right-part .icon {
+            font-size: 24px;
+        }
+
+        .container {
+            position: relative;
             text-align: center;
         }
-        nav {
-            margin-top: 20px;
+
+        .container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: blur(1.2px);
         }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+
+        .text-a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #edeae4;
+            padding: 20px 60px;
+            border-radius: 8px;
         }
-        nav ul li {
-            display: inline;
+
+        button {
+            padding: 10px 20px;
+			margin: 20px;
+            background-color: #000;											;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #777;
+        }
+
+        .ctgrs {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .category {
+            flex: 1;
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            position: relative;
             margin-right: 20px;
         }
-        nav ul li a {
+
+        .blue-bg {
+            background-color: #607356;
+        }
+
+        .pink-bg {
+            background-color: #5b747d;
+        }
+
+        .categ-image {
+            position: absolute;
+            top: 20px; /* Adjust the negative margin as needed */
+            transform: translateY(-50%);
+            width: 130px;
+            height: auto;
+        }
+
+        .text-b {
             color: #fff;
+            margin-right: -60px; /* Added margin to the right */
+            margin-left: auto; /* Aligns the text-b to the right */
+            font-size: 18px;
+        }
+
+        .shop-button {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #000; /* Adjust the color as needed */
+            border: none;
+            border-radius: 5px;
+            margin-left: auto;
             text-decoration: none;
+			transition: background-color 0.3s ease;
         }
-        section {
-            padding: 20px;
+
+        .shop-button:hover {
+            background-color: #e0d6c1;
         }
-        footer {
-            background-color: #333;
+
+        .subsc {
+            max-width: 1060px;
+            margin: 100px auto;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            background-color: #ad8e74;
             color: #fff;
+        }
+
+        .subsc img {
+            width: auto;
+            height: 100px;
+			margin-left: 30px;
+        }
+
+        .subsc input[type="email"],
+        .subsc button {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+        }
+
+        .subsc button {
+            background-color: #fff;
+            color: #3498db;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .subsc button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .subsc h2 {
+            margin-right: 20px;
+			font-size: 30px;
+        }
+		
+		footer {
             text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 10px;
+            background-color: #615e59;
+            color: white;
         }
     </style>
 </head>
+
 <body>
-<background img src="https://img.freepik.com/premium-photo/row-bikes-store-with-store-background_771703-6904.jpg">
+	<header>
+		<nav>
+			<div class="left-part">
+				<a href="#">About Us</a>
+				<a href="#">Products</a>
+				<a href="#">Contact Us</a>
+			</div>
+			<div class="mid-part">
+				<a href="index.html">
+					<img src="logomismo.png" alt="Index Direct">
+				</a>
+			</div>
+			<div class="right-part">
+				<a href="#" class="icon">
+					<i class="ri-account-circle-fill"></i>
+				</a>
+			</div>
+		</nav>
+	</header>
 
-<header>
-    <h1>SpinWorx</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contacts.html">Contact Us</a></li>
-        </ul>
-    </nav>
-</header>
+	<main>
+	<div class="container">
+		<img src="hmpgbg1.jpeg" alt="Homepage Background">
+		<div class="text-a">
+			<h2>Welcome to Caffeine Cove!</h2>
+			<p><i>Get ready to brew your best cup yet with our range of equipment and ingredients. 
+			Whether you're a coffee lover or thinking of starting your own café, we've got you covered. Let's get started!</i></p>
+			<button onclick="scrollToSection()">Let's get started!</button>
+		</div>
+	</div>
+	</main>
 
-<section>
-<center>
-    <h2>Welcome to Bike Parts Shop!</h2>
-    <p>We offer a variety of high-quality bike parts at affordable prices. Explore our collection and upgrade your bike today!</p>
-    <a href="products.html" style="padding: 10px 20px; background-color: #333; color: #fff; text-decoration: none; border-radius: 5px;">Shop Now</a>
-</center>
-</section>
+	<div class="ctgrs" id="categories">
+		<div class="category blue-bg">
+			<img src="ekwip.png" alt="Equipments" class="categ-image">
+			<div class="text-b">Equipments</div>
+			<a href="products2.html" class="shop-button">Shop Now!</a>
+		</div>
 
-<footer>
-    <p>&copy; 2024 Bike Parts Shop. All rights reserved.</p>
-</footer>
+		<div class="category pink-bg">
+			<div class="text-b">Ingredients</div>
+			<a href="products.html" class="shop-button">Shop Now!</a>
+			<img src="ingr.png" alt="Ingredients" class="categ-image">
+		</div>
+	</div>
 
+	<div class="subsc">
+		<img src="subzzz.png">
+		<h2>Subscribe to our newsletter</h2>
+		<form>
+			<input type="email" placeholder="Enter your email address" required>
+			<button type="submit">Subscribe</button>
+		</form>
+	</div>
+
+	<footer>
+		<p>2024 Caffeine Cove. All rights reserved.</p>
+	</footer>
+
+	<script>
+		function scrollToSection() {
+			const skrewl = document.getElementById('categories');
+			skrewl.scrollIntoView({ behavior: 'smooth' });
+		}
+	</script>
 </body>
 </html>
