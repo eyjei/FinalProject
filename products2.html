@@ -154,6 +154,24 @@
 			transition: transform 1s ease;
 			text-decoration: none;
 		}
+		
+		
+		.top-scroll {
+			font-size: 20px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #787268;
+            border-radius: 100%;
+            padding: 10px 12px;
+            cursor: pointer;
+            z-index: 999; /* Ensure the button appears above other content */
+            transition: background-color 0.3s ease;
+        }
+
+        .top-scroll:hover {
+            background-color: #b0aba4;
+        }
     </style>
 </head>
 
@@ -188,78 +206,80 @@
 		<h1>Equipments</h1>
 		<div class="content">
 			<div class ="Products">
-				<img src="miller.png" alt="Coffeebean">
-				<h2>Coffeebean</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Coffeebean', 560)">Add to Cart</button>
+				<img src="miller.png" alt="coffeemill">
+				<h2>Kalita Coffee Mill Wooden Manual Coffee Grinder</h2>
+				<p>₱1,250.00</p>
+				<button onclick="addToCart('Kalita Coffee Mill Wooden Manual Coffee Grinder', 1250.00)">Add to Cart</button>
 
 			</div>
 
 			<div class ="Products">
 				<img src="tamper.png" alt="Looseleaf">
-				<h2>Looseleaf</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Looseleaf', 460)">Add to Cart</button>
+				<h2>Coffee Tamper <br> Bean Pressing Tool</h2>
+				<p>₱1,173.31</p>
+				<button onclick="addToCart('Coffee Tamper Bean Pressing Tool', 1173.31)">Add to Cart</button>
 			</div>
 
 			<div class ="Products">
 				<img src="scale.png" alt="matcha">
-				<h2>Matcha</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Matcha', 460)">Add to Cart</button>
+				<h2>Digital Coffee Bean Scale</h2>
+				<p>₱598.00</p>
+				<button onclick="addToCart('Digital Coffee Bean Scale', 598.00)">Add to Cart</button>
 				
 			</div>
 			
 			<div class ="Products">
 				<img src="chemex.png" alt="matcha">
-				<h2>puree</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				<h2>Chemex Pour-Over Glass Coffeemaker</h2>
+				<p> ₱480.00</p>
+				<button onclick="addToCart('Chemex Pour-Over Glass Coffeemaker', 480.00)">Add to Cart</button>
 				
 			</div>
 			
 			<div class ="Products">
 				<img src="setsetset.png" alt="matcha">
-				<h2>puree</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				<h2>Coffee Equipments Cleaning brushes Set</h2>
+				<p>₱500.00</p>
+				<button onclick="addToCart('Coffee Equipments Cleaning brushes Set', 500.00)">Add to Cart</button>
 				
 			</div>
 			
 			<div class ="Products">
 				<img src="aeropress.png" alt="matcha">
-				<h2>puree</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				<h2>AeroPress Basic Set Coffee and Espresso Maker</h2>
+				<p>₱2,900.00</p>
+				<button onclick="addToCart('AeroPress Basic Set Coffee and Espresso Maker', 2,900.00)">Add to Cart</button>
 				
 			</div>
 			
 			<div class ="Products">
 				<img src="frenchpress.png" alt="matcha">
-				<h2>puree</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				<h2>French Press Coffee Maker</h2>
+				<p>₱490.00</p>
+				<button onclick="addToCart('French Press Coffee Maker', 490.00)">Add to Cart</button>
 				
 			</div>
 			
 			<div class ="Products">
 				<img src="siphon.png" alt="matcha">
-				<h2>puree</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				<h2>Siphon Coffee Maker </h2>
+				<p>₱938.63</p>
+				<button onclick="addToCart('Siphon Coffee Maker ', 938.63)">Add to Cart</button>
 				
 			</div>
 			
 			<div class ="Products">
 				<img src="mokapot.png" alt="matcha">
-				<h2>puree</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				<h2> Moka Pot Coffee Maker Coffee </h2>
+				<p>₱300.00</p>
+				<button onclick="addToCart('Moka Pot Coffee Maker Coffee', 300.00)">Add to Cart</button>
 				
 			</div>
 		</div>
 		
-		
+		<button class="top-scroll" onclick="scrollToTop()">
+			<i class="ri-arrow-up-s-line"></i>
+		</button>
 		
 	
 	</main>
@@ -273,7 +293,9 @@
 			<p>Name:</p>
 			<input type="text" id="customerName" style="margin-bottom: 10px;">
 			<p>Contact Number:</p>
-			<input type="text" id="customerContact" style="margin-bottom: 10px;"><br><br>
+			<input type="text" id="customerContact" style="margin-bottom: 10px;">
+			<p>Address:</p>
+			<input type="text" id="customerAddress" style="margin-bottom: 10px;"><br><br>
 			<button id="checkoutButton" onclick="checkout()">Checkout</button>
 			<button id="closeButton" onclick="closeModal()" style="background-color: black; color: white; margin-left: 10px;">Close</button>
 		</div>
@@ -284,7 +306,7 @@
 	</footer>
 
 	<script>
-	let cart = [];
+    let cart = [];
 
     function addToCart(name, price) {
         cart.push({ name: name, price: price });
@@ -298,11 +320,11 @@
         let totalPrice = 0;
 
         cart.forEach(item => {
-            orderSummaryElement.textContent += `${item.name}: $${item.price}\n`;
+            orderSummaryElement.textContent += `${item.name}: ₱${item.price}\n`; 
             totalPrice += item.price;
         });
 
-        orderSummaryElement.textContent += `\nTotal Price: $${totalPrice}`;
+        orderSummaryElement.textContent += `\nTotal Price: ₱${totalPrice}`; 
         showModal();
     }
 
@@ -317,26 +339,32 @@
     function checkout() {
         const customerName = document.getElementById('customerName').value;
         const customerContact = document.getElementById('customerContact').value;
+        const customerAddress = document.getElementById('customerAddress').value;
 
         if (!customerName || !customerContact) {
-            alert("Please enter your name and contact number.");
+            alert("Please enter your name address and contact number.");
             return;
         }
 
         let orderSummary = '';
 
         cart.forEach(item => {
-            orderSummary += `${item.name}: $${item.price}\n`;
+            orderSummary += `${item.name}: ₱${item.price}\n`; 
         });
 
-        orderSummary += `\nTotal Price: $${cart.reduce((total, item) => total + item.price, 0)}`;
+        orderSummary += `\nTotal Price: ₱${cart.reduce((total, item) => total + item.price, 0)}`; 
         orderSummary += `\nName: ${customerName}`;
         orderSummary += `\nContact Number: ${customerContact}`;
+        orderSummary += `\nAddress: ${customerAddress}`;
 
         alert(orderSummary);
         cart = [];
         closeModal();
     }
+	
+	function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 </script>
 </body>
 </html>
