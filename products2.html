@@ -1,0 +1,342 @@
+<!DOCTYPE html>						<!-- scroll to top button -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Sample</title>
+    <style>
+		/* Basic Styling */
+		body {
+			font-family: monospace, sans-serif;
+			background-color: #ebebeb;
+			margin: 0;
+			position: relative; /* Add this */
+		}
+
+		/* Header Styling */
+		header {
+			background: #474032;
+			color: #fff;
+			padding: 10px 20px;
+		}
+
+		/* Navigation Styling */
+		nav {
+			display: flex;
+			align-items: center;
+			font-size: 17px;
+		}
+
+		nav a {
+			text-decoration: none;
+			color: #fff;
+			padding: 10px 12px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		.left-part a:hover {
+			background-color: #73695e;
+		}
+
+		/* Logo Styling */
+		.mid-part {
+			flex: 1; /* Take remaining space */
+			text-align: center; /* Center the logo horizontally */
+			margin-right: 270px;
+		}
+
+		.mid-part a img {
+			width: 180px;
+			height: 40px;
+		}
+
+		/* Account Icon Styling */
+		.right-part {
+			margin-left: auto; /* Push the .right-part to the right */
+		}
+
+		.right-part .icon {
+			font-size: 34px;
+		}
+
+		/* Footer Styling */
+		footer {
+			text-align: center;
+			padding: 20px;
+			background-color: #7d7970;
+			color: white;
+		}
+
+		/* Main Content Styling */
+		main {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 20px;
+		width: 90%; /* para mag fit kahit izoom in zoom out*/
+		max-width: 1200px;
+		margin: 0 auto;
+		}
+		
+		
+		.panel {
+             position: absolute;
+			top: 125px;
+			left: 40px;
+            width: 200px;
+            padding: 10px;
+            border-right: 1px solid #ddd;
+        }
+        
+        .panel a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .panel a.active {
+            background-color: #f4f4f4;
+        }
+		
+		.content {
+            margin-left: 120px; /* considering the panel width and its padding */
+            padding: 15px;
+			display: flex;
+			width: 100%;
+			flex-wrap: wrap;
+        }
+		
+		
+		/* Product Styling */
+		.Products {
+			width: 100%;
+			max-width: 400px;
+			height: auto;
+			margin: 10px;
+			text-align: center;
+			background-color: #ffffff;
+			border-radius: 20px;
+			padding: 30px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			transition: transform 1s ease;
+			text-decoration: none;
+		}
+
+		.Products img {
+			max-width: 100%; /* Make the image fit the container's width */
+			height: 300px; /* Maintain aspect ratio */
+		}
+
+		/* Button Styling */
+		.Products button {
+			background-color: #202020;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+		.ContentEquipment{
+		width: 100%;
+			max-width: 400px;
+			height: auto;
+			margin: 10px;
+			text-align: center;
+			background-color: #ffffff;
+			border-radius: 20px;
+			padding: 30px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			transition: transform 1s ease;
+			text-decoration: none;
+		}
+    </style>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="left-part">
+				<a href="aboutus.html">About Us</a>
+				<a href="products2.html">Products</a>
+				<a href="contact.html">Contact Us</a>
+			</div>
+			<div class="mid-part">
+				<a href="index.html">
+					<img src="logomismo.png" alt="Index Direct">
+				</a>
+			</div>
+			<div class="right-part">
+				<a href="account.html" class="icon">
+					<i class="ri-account-circle-fill"></i>
+				</a>
+			</div>
+		</nav>
+	</header>
+	
+	<main>
+		<div class="panel">
+			<h1>Products</h1>
+			<a href="#" class="active">Equipments</a>
+			<a href="products.html">Ingredients</a>
+		</div>
+		
+		<h1>Equipments</h1>
+		<div class="content">
+			<div class ="Products">
+				<img src="miller.png" alt="Coffeebean">
+				<h2>Coffeebean</h2>
+				<p>"Description"</p>
+				<button onclick="addToCart('Coffeebean', 560)">Add to Cart</button>
+
+			</div>
+
+			<div class ="Products">
+				<img src="tamper.png" alt="Looseleaf">
+				<h2>Looseleaf</h2>
+				<p>"Description"</p>
+				<button onclick="addToCart('Looseleaf', 460)">Add to Cart</button>
+			</div>
+
+			<div class ="Products">
+				<img src="scale.png" alt="matcha">
+				<h2>Matcha</h2>
+				<p>"Description"</p>
+				<button onclick="addToCart('Matcha', 460)">Add to Cart</button>
+				
+			</div>
+			
+			<div class ="Products">
+				<img src="chemex.png" alt="matcha">
+				<h2>puree</h2>
+				<p>"Description"</p>
+				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				
+			</div>
+			
+			<div class ="Products">
+				<img src="setsetset.png" alt="matcha">
+				<h2>puree</h2>
+				<p>"Description"</p>
+				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				
+			</div>
+			
+			<div class ="Products">
+				<img src="aeropress.png" alt="matcha">
+				<h2>puree</h2>
+				<p>"Description"</p>
+				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				
+			</div>
+			
+			<div class ="Products">
+				<img src="frenchpress.png" alt="matcha">
+				<h2>puree</h2>
+				<p>"Description"</p>
+				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				
+			</div>
+			
+			<div class ="Products">
+				<img src="siphon.png" alt="matcha">
+				<h2>puree</h2>
+				<p>"Description"</p>
+				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				
+			</div>
+			
+			<div class ="Products">
+				<img src="mokapot.png" alt="matcha">
+				<h2>puree</h2>
+				<p>"Description"</p>
+				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				
+			</div>
+		</div>
+		
+		
+		
+	
+	</main>
+	
+	
+	
+	<div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000;">
+		<div id="modal" style="background-color: white; padding: 20px; border-radius: 5px; position: relative;">
+			<h2>Order Summary</h2>
+			<pre id="orderSummary" style="margin: 10px 0;"></pre>
+			<p>Name:</p>
+			<input type="text" id="customerName" style="margin-bottom: 10px;">
+			<p>Contact Number:</p>
+			<input type="text" id="customerContact" style="margin-bottom: 10px;"><br><br>
+			<button id="checkoutButton" onclick="checkout()">Checkout</button>
+			<button id="closeButton" onclick="closeModal()" style="background-color: black; color: white; margin-left: 10px;">Close</button>
+		</div>
+	</div>	
+
+	<footer>
+		<p>2024 Caffeine Cove. All rights reserved.</p>
+	</footer>
+
+	<script>
+	let cart = [];
+
+    function addToCart(name, price) {
+        cart.push({ name: name, price: price });
+        updateCartPreview();
+    }
+
+    function updateCartPreview() {
+        const orderSummaryElement = document.getElementById('orderSummary');
+        orderSummaryElement.textContent = '';
+
+        let totalPrice = 0;
+
+        cart.forEach(item => {
+            orderSummaryElement.textContent += `${item.name}: $${item.price}\n`;
+            totalPrice += item.price;
+        });
+
+        orderSummaryElement.textContent += `\nTotal Price: $${totalPrice}`;
+        showModal();
+    }
+
+    function showModal() {
+        document.getElementById('overlay').style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById('overlay').style.display = "none";
+    }
+
+    function checkout() {
+        const customerName = document.getElementById('customerName').value;
+        const customerContact = document.getElementById('customerContact').value;
+
+        if (!customerName || !customerContact) {
+            alert("Please enter your name and contact number.");
+            return;
+        }
+
+        let orderSummary = '';
+
+        cart.forEach(item => {
+            orderSummary += `${item.name}: $${item.price}\n`;
+        });
+
+        orderSummary += `\nTotal Price: $${cart.reduce((total, item) => total + item.price, 0)}`;
+        orderSummary += `\nName: ${customerName}`;
+        orderSummary += `\nContact Number: ${customerContact}`;
+
+        alert(orderSummary);
+        cart = [];
+        closeModal();
+    }
+</script>
+</body>
+</html>

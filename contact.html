@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffeine Cove</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+	    body {
+            font-family: monospace, sans-serif;
+            background-color: #ebebeb;
+            margin: 0;
+        }
+
+        header {
+            background: #474032;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+			font-size: 17px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .left-part a:hover {
+            background-color: #73695e;
+        }
+
+        .mid-part {
+            flex: 1; /* Take remaining space */
+            text-align: center; /* Center the logo horizontally */
+            margin-right: 270px;
+        }
+
+        .mid-part a img {
+            width: 180px;
+            height: 40px;
+        }
+
+        .right-part {
+            margin-left: auto; /* Push the .right-part to the right */
+        }
+
+        .right-part .icon-acc {
+            font-size: 34px;
+        }
+		
+		.icons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .icon {
+            margin: 0 30px;
+            text-align: center;
+        }
+
+        .icon img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .icon h3 {
+            font-weight: bold;
+        }
+
+        .icon p {
+            font-size: 15px;
+        }
+		
+		
+
+        form {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 50px auto; /* Center the form horizontally */
+            max-width: 400px; /* Limit the form width */
+        }
+
+        form label,
+        form input,
+        form textarea,
+        form button {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding and border are included in width */
+        }
+
+        form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #555;
+        }
+		
+		
+
+        .get-in-touch {
+            margin-bottom: 60px;
+        }
+
+        .get-in-touch h2 {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            position: relative;
+			padding: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 20px;
+            color: #574238;
+            font-size: 40px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #666;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left-part">
+                <a href="aboutus.html">About Us</a>
+                <a href="products2.html">Products</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="mid-part">
+                <a href="index.html">
+                    <img src="logomismo.png" alt="Index Direct">
+                </a>
+            </div>
+            <div class="right-part">
+                <a href="account.html" class="icon-acc">
+                    <i class="ri-account-circle-fill"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+	
+	<main>
+		<div class="get-in-touch">
+            <h2>Connect with Us</h2>
+            <div class="icons-container">
+				<div class="icon">
+                    <img src="pinpoint-icon.png" alt="Location">
+                    <h3>Address</h3>
+                    <p>1160 Concepcion Aguila St., Quiapo, Manila </p>
+                </div>                
+                <div class="icon">
+                    <img src="phone-icon.png" alt="Phone">
+                    <h3>Phone</h3>
+                    <p>(02) 256-5118</p>
+                </div>
+                <div class="icon">
+                    <img src="email-icon.png" alt="Email">
+                    <h3>Email</h3>
+                    <p>andrhea.jermane.montero@adamson.edu.ph</p>
+                </div>
+            </div>
+        </div>
+		
+		<form id="contact-form">
+            <h1 style="text-align: center;">Send us a Message!</h1>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Send Message">
+        </form>
+	</main>
+	
+    <hr style="height: 1px; background-color: #bebebe; width: 90%; margin-top: 120px;">
+    <br>
+    <p style="text-align: center;">Visit our socials</p>
+		
+    <div class="social-icons">
+		<a href="https://www.facebook.com/teromonchi/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/ypkchi?s=21&t=sIHJhb62akGuwLF1SkhNSQ" target="_blank"><i class="fab fa-twitter"></i></a>
+		<a href="https://www.instagram.com/mostpinakacutest?igsh=MndoeWk2aWQya3R1&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>         
+		<a href="https://www.threads.net/@mostpinakacutest" target="_blank"><i class="ri-threads-line"></i></a>         
+	</div>
+	
+	<script>
+        // Function to handle form submission
+        function handleSubmit(event) {
+            // Prevent default form submission
+            event.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+
+            // Display form data
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+
+            // Reset form fields
+            this.reset();
+
+            // Show alert message
+            alert('Your message is delivered. Thank you for messaging us!');
+        }
+
+        // Get the form element
+        const form = document.getElementById('contact-form');
+
+        // Add form submission event listener
+        form.addEventListener('submit', handleSubmit);
+    </script>
+</body>
+</html>

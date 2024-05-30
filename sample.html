@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        .contact-info h2 {
+            margin-bottom: 10px;
+        }
+        .contact-info p {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .contact-info p i {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #333;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #666;
+        }
+        form {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        form label, form input, form textarea, form button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: #555;
+        }
+		
+		
+		.get-in-touch {
+            margin-bottom: 30px;
+        }
+        .get-in-touch h2 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .icons-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .icon {
+            margin: 0 20px;
+            text-align: center;
+        }
+        .icon img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .icon p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+        <div class="get-in-touch">
+            <h2>Connect with Us</h2>
+            <div class="icons-container">
+                <div class="icon">
+                    <img src="email-icon.png" alt="Email">
+                    <p>Email</p>
+                </div>
+                <div class="icon">
+                    <img src="phone-icon.png" alt="Phone">
+                    <p>Phone</p>
+                </div>
+                <div class="icon">
+                    <img src="location-icon.png" alt="Location">
+                    <p>Location</p>
+                </div>
+            </div>
+        </div>
+        
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Send Message">
+        </form>
+
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </main>
+    
+    <script>
+        // Function to handle form submission
+        function handleSubmit(event) {
+            // Prevent default form submission
+            event.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+
+            // Display form data
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+
+            // Reset form fields
+            this.reset();
+
+            // Show alert message
+            alert('Your message is delivered. Thank you for messaging us!');
+        }
+
+        // Get the form element
+        const form = document.getElementById('contact-form');
+
+        // Add form submission event listener
+        form.addEventListener('submit', handleSubmit);
+    </script>
+</body>
+</html>
