@@ -21,6 +21,7 @@
         nav {
             display: flex;
             align-items: center;
+			font-size: 17px;
         }
 
         nav a {
@@ -39,7 +40,7 @@
         .mid-part {
             flex: 1; /* Take remaining space */
             text-align: center; /* Center the logo horizontally */
-            margin-right: 250px;
+            margin-right: 270px;
         }
 
         .mid-part a img {
@@ -52,7 +53,7 @@
         }
 
         .right-part .icon {
-            font-size: 24px;
+            font-size: 34px;
         }
 
         .container {
@@ -77,7 +78,7 @@
             border-radius: 8px;
         }
 
-        button {
+        .text-a button {
             padding: 10px 20px;
 			margin: 20px;
             background-color: #000;											;
@@ -171,7 +172,6 @@
             padding: 10px;
             border-radius: 5px;
             border: none;
-            margin-right: 10px;
         }
 
         .subsc button {
@@ -190,6 +190,23 @@
 			font-size: 30px;
         }
 		
+		.top-scroll {
+			font-size: 20px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #474032;
+            border-radius: 100%;
+            padding: 10px 12px;
+            cursor: pointer;
+            z-index: 999; /* Ensure the button appears above other content */
+            transition: background-color 0.3s ease;
+        }
+
+        top-scroll:hover {
+            background-color: #777;
+        }
+		
 		footer {
             text-align: center;
             padding: 10px;
@@ -203,9 +220,9 @@
 	<header>
 		<nav>
 			<div class="left-part">
-				<a href="#">About Us</a>
-				<a href="#">Products</a>
-				<a href="#">Contact Us</a>
+				<a href="aboutus.html">About Us</a>
+				<a href="products2.html">Products</a>
+				<a href="contact.html">Contact Us</a>
 			</div>
 			<div class="mid-part">
 				<a href="index.html">
@@ -213,7 +230,7 @@
 				</a>
 			</div>
 			<div class="right-part">
-				<a href="#" class="icon">
+				<a href="account.html" class="icon">
 					<i class="ri-account-circle-fill"></i>
 				</a>
 			</div>
@@ -221,15 +238,15 @@
 	</header>
 
 	<main>
-	<div class="container">
-		<img src="hmpgbg1.jpeg" alt="Homepage Background">
-		<div class="text-a">
-			<h2>Welcome to Caffeine Cove!</h2>
-			<p><i>Get ready to brew your best cup yet with our range of equipment and ingredients. 
-			Whether you're a coffee lover or thinking of starting your own café, we've got you covered. Let's get started!</i></p>
-			<button onclick="scrollToSection()">Let's get started!</button>
+		<div class="container">
+			<img src="hmpgbg1.jpeg" alt="Homepage Background">
+			<div class="text-a">
+				<h2>Welcome to Caffeine Cove!</h2>
+				<p><i>Get ready to brew your best cup yet with our range of equipment and ingredients. 
+				Whether you're a coffee lover or thinking of starting your own café, we've got you covered. Let's get started!</i></p>
+				<button onclick="scrollToSection()">Let's get started!</button>
+			</div>
 		</div>
-	</div>
 	</main>
 
 	<div class="ctgrs" id="categories">
@@ -255,6 +272,10 @@
 		</form>
 	</div>
 
+	<button class="top-scroll" onclick="scrollToTop()">
+        <i class="ri-arrow-up-s-line"></i>
+    </button>
+
 	<footer>
 		<p>2024 Caffeine Cove. All rights reserved.</p>
 	</footer>
@@ -264,6 +285,10 @@
 			const skrewl = document.getElementById('categories');
 			skrewl.scrollIntoView({ behavior: 'smooth' });
 		}
+		
+		function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 	</script>
 </body>
 </html>
