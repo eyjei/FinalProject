@@ -11,7 +11,7 @@
 			font-family: monospace, sans-serif;
 			background-color: #ebebeb;
 			margin: 0;
-			position: relative; /* Add this */
+			position: relative;
 		}
 
 		/* Header Styling */
@@ -78,7 +78,7 @@
 		align-items: center;
 		flex-wrap: wrap;
 		padding: 20px;
-		width: 90%; /* para mag fit kahit izoom in zoom out*/
+		width: 90%;
 		max-width: 1200px;
 		margin: 0 auto;
 		}
@@ -105,7 +105,7 @@
         }
 		
 		.content {
-            margin-left: 120px; /* considering the panel width and its padding */
+            margin-left: 120px; 
             padding: 15px;
 			display: flex;
 			width: 100%;
@@ -191,31 +191,31 @@
 			<div class ="Products">
 				<img src="coffeebean.png" alt="Coffeebean">
 				<h2>Coffeebean</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Coffeebean', 560)">Add to Cart</button>
+				<p>₱915.00</p>
+				<button onclick="addToCart('Coffeebean', 915.00)">Add to Cart</button>
 
 			</div>
 
 			<div class ="Products">
 				<img src="looseleaf.png" alt="Looseleaf">
 				<h2>Looseleaf</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Looseleaf', 460)">Add to Cart</button>
+				<p>₱490.00</p>
+				<button onclick="addToCart('Looseleaf', 490.00)">Add to Cart</button>
 			</div>
 
 				<div class ="Products">
 				<img src="matcha.png" alt="matcha">
 				<h2>Matcha</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Matcha', 460)">Add to Cart</button>
+				<p>₱550.00</p>
+				<button onclick="addToCart('Matcha', 550.00)">Add to Cart</button>
 				
 			</div>
 			
 				<div class ="Products">
 				<img src="puree.png" alt="matcha">
 				<h2>puree</h2>
-				<p>"Description"</p>
-				<button onclick="addToCart('Puree', 460)">Add to Cart</button>
+				<p>₱190.00</p>
+				<button onclick="addToCart('Puree', 190.00)">Add to Cart</button>
 				
 			</div>
 		</div>
@@ -227,14 +227,16 @@
 	
 	
 	
-	<div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000;">
+		<div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000;">
 		<div id="modal" style="background-color: white; padding: 20px; border-radius: 5px; position: relative;">
 			<h2>Order Summary</h2>
 			<pre id="orderSummary" style="margin: 10px 0;"></pre>
 			<p>Name:</p>
 			<input type="text" id="customerName" style="margin-bottom: 10px;">
 			<p>Contact Number:</p>
-			<input type="text" id="customerContact" style="margin-bottom: 10px;"><br><br>
+			<input type="text" id="customerContact" style="margin-bottom: 10px;">
+			<p>Address:</p>
+			<input type="text" id="customerAddress" style="margin-bottom: 10px;"><br><br>
 			<button id="checkoutButton" onclick="checkout()">Checkout</button>
 			<button id="closeButton" onclick="closeModal()" style="background-color: black; color: white; margin-left: 10px;">Close</button>
 		</div>
@@ -245,7 +247,7 @@
 	</footer>
 
 	<script>
-	let cart = [];
+    let cart = [];
 
     function addToCart(name, price) {
         cart.push({ name: name, price: price });
@@ -259,11 +261,11 @@
         let totalPrice = 0;
 
         cart.forEach(item => {
-            orderSummaryElement.textContent += `${item.name}: $${item.price}\n`;
+            orderSummaryElement.textContent += `${item.name}: ₱${item.price}\n`; 
             totalPrice += item.price;
         });
 
-        orderSummaryElement.textContent += `\nTotal Price: $${totalPrice}`;
+        orderSummaryElement.textContent += `\nTotal Price: ₱${totalPrice}`; 
         showModal();
     }
 
@@ -278,21 +280,23 @@
     function checkout() {
         const customerName = document.getElementById('customerName').value;
         const customerContact = document.getElementById('customerContact').value;
+        const customerAddress = document.getElementById('customerAddress').value;
 
         if (!customerName || !customerContact) {
-            alert("Please enter your name and contact number.");
+            alert("Please enter your name address and contact number.");
             return;
         }
 
         let orderSummary = '';
 
         cart.forEach(item => {
-            orderSummary += `${item.name}: $${item.price}\n`;
+            orderSummary += `${item.name}: ₱${item.price}\n`; 
         });
 
-        orderSummary += `\nTotal Price: $${cart.reduce((total, item) => total + item.price, 0)}`;
+        orderSummary += `\nTotal Price: ₱${cart.reduce((total, item) => total + item.price, 0)}`; 
         orderSummary += `\nName: ${customerName}`;
         orderSummary += `\nContact Number: ${customerContact}`;
+        orderSummary += `\nAddress: ${customerAddress}`;
 
         alert(orderSummary);
         cart = [];
